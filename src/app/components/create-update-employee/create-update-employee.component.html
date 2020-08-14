@@ -1,0 +1,105 @@
+<mat-toolbar class="top">
+    <mat-toolbar-row>
+        <div class="mat-title">
+            <span *ngIf="data.action == 'create'">Create New Employee</span>
+            <span *ngIf="data.action == 'update'">Update Employees</span>
+        </div>
+        <div class="spacer"></div>
+        <button mat-icon-button color="warn" (click)="close()"> 
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<form autocomplete="off" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="formContainer">
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="fill" >
+                    <mat-label>Employee Name</mat-label>
+                    <input type="text" formControlName="name" required  matInput placeholder="Enter Employee name...">   
+                    <mat-error *ngIf="hasError('name', 'required')">Employee Name is mandatory.</mat-error>            
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="fill" >
+                    <mat-label>Employee Code</mat-label>
+                    <input type="number" formControlName="empId" required  matInput placeholder="Enter Employee code...">   
+                    <mat-error *ngIf="hasError('empId', 'required')">Employee Code is mandatory.</mat-error>
+                </mat-form-field>
+            </div>         
+
+            <div class="col">
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Employee Position</mat-label>
+                    <input type="text" formControlName="position" required  matInput placeholder="Enter Employee Position..."> 
+                    <mat-error *ngIf="hasError('position', 'required')">Employee Position is mandatory.</mat-error>               
+                </mat-form-field>
+            </div>            
+            <div class="col">
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Work Experience</mat-label>
+                    <input type="text" formControlName="exprience" required   matInput placeholder="experience in years...">  
+                    <mat-error *ngIf="hasError('exprience', 'required')">Work Experience is mandatory.</mat-error>               
+                </mat-form-field>
+            </div> 
+            <div class="col">
+                <mat-form-field class="example-full-width" appearance="fill">
+                    <mat-label>Email</mat-label>
+                    <input type="email"  formControlName="emailId" required  matInput  placeholder="Puresoftware@example.com">
+                    <mat-error *ngIf="hasError('emailId', 'required')">Email  is mandatory...</mat-error>               
+                  </mat-form-field>
+            </div>          
+           
+            <div class="col">
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Reporting Manager</mat-label>
+                    <input type="text"
+                           placeholder="Select Reporting"
+                           aria-label="Reporting"
+                           required
+                           matInput
+                           formControlName="reportingTo"
+                           [matAutocomplete]="countryAuto">
+                    <mat-autocomplete #countryAuto="matAutocomplete">
+                      <mat-option *ngFor="let option of ['Vivek gaur' ,'Neha gupta','Lekhnarayan','Sweety Nair']" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>
+                    <mat-error *ngIf="hasError('reportingTo', 'required')">Reporting Manager  is mandatory...</mat-error>    
+                </mat-form-field>
+            </div>   
+            <div class="col">
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Project</mat-label>
+                    <input type="text"
+                           placeholder="Project .."
+                           aria-label="Project"
+                           required
+                           matInput
+                           formControlName="project"
+                           [matAutocomplete]="projectAuto">
+                    <mat-autocomplete #projectAuto="matAutocomplete">
+                      <mat-option *ngFor="let option of ['HRMS' ,'ORANGE','MHK Admin App','AMTRUST','MANDIRI  BANK','Mashreq']" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>    
+                    <mat-error *ngIf="hasError('project', 'required')">Project is mandatory.</mat-error>             
+                </mat-form-field>
+            </div>       
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <div class="spacer"></div>
+            <button mat-flat-button color="accent" >
+                <span class="material-icons">face
+                    </span>&nbsp;
+                <span *ngIf="data.action == 'create'">Create</span>
+                <span *ngIf="data.action == 'update'">Update</span> 
+                Employee&nbsp;
+            </button>                  
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

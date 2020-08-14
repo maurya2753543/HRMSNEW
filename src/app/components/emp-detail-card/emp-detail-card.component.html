@@ -1,0 +1,44 @@
+<mat-card class="clickable"  matRipple>
+    <div class="cardContent">
+        <div class="empHeading">
+            <div class="profileDetails">
+                <div class="empImage">
+                    <img [src]="data.profileImage" [alt]="data.name + 'Profile Image'">
+                </div>
+                <div class="empDetail">
+                    <div class="mat-subheading-2">{{data.name}} {{data.empId}}</div>
+                    <div class="mat-body">{{data.position}} - {{data.exprience}}</div>
+                </div>
+            </div>
+            <button mat-icon-button color="warn" [matMenuTriggerFor]="orgMenu" stopClickPropgation> 
+                <mat-icon>more_horiz</mat-icon>
+            </button>
+            <mat-menu #orgMenu="matMenu" xPosition="before">
+                <button mat-menu-item >
+                    <mat-icon>slideshow</mat-icon>
+                    <span>View Profile</span>
+                </button>
+                <button mat-menu-item (click)="updateEmp()">
+                    <mat-icon>rate_review</mat-icon>
+                    <span>Updated Profile</span>
+                </button>
+            </mat-menu>
+        </div>
+        <div class="orgDetails">
+            <div class="detail link" matTooltip="Email Address" matTooltipPosition="before">
+                <mat-icon>alternate_email</mat-icon>
+                <span>{{data.emailId}}</span>
+            </div>
+            <div class="detail" matTooltip="Reporting Manager" matTooltipPosition="before">
+                <mat-icon>portrait</mat-icon>
+                <span>{{data.reportingTo}}</span>
+            </div>
+            <div class="detail" matTooltip="Project" matTooltipPosition="before">
+                <mat-icon>dns</mat-icon>
+                <span>{{data.project}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- <mat-divider></mat-divider>
+    <div class="skills"></div> -->
+</mat-card>

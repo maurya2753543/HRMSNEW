@@ -1,0 +1,53 @@
+@import "../../../../custom-theme.scss";
+
+.pageContent {
+    padding: 20px 8px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 20%;
+    max-width: 20%;
+    display: flex;
+}
+
+.info {
+    padding-bottom: 20px;
+}
+
+.aboutSection {
+    padding: 0 8px;
+}
+
+.aboutSection .pageTitle h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.aboutContent {
+    color: #333333;
+}
+
+.orgLogo {
+    width: 340px;
+    height: 100px;
+    float: left;
+    border: 1px solid $primary100;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    margin-right: 20px;
+    margin-bottom: 0px;
+    margin-top: 7px;
+    background-color: $primary50;
+}
+
+.orgLogo img {
+    width: 90%;
+}

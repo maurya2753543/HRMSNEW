@@ -1,0 +1,31 @@
+:host {
+    padding: 14px 8px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 20%;
+    max-width: 20%;
+    display: flex;
+}
+
+.pieChart .col {
+    flex: 33.33%;
+    max-width: 33.33%;
+}
+
+.chartsIframe .col {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.chartsIframe iframe {
+    border: 0;
+    width: 100%;
+    height: 600px;
+    overflow-x: hidden;
+}

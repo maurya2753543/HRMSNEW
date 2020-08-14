@@ -1,0 +1,5 @@
+<mat-card [class.clickable]="data.action" [ngClass]="data.theme" (click)="data.action && data.action(data.info)">
+    <div class="infoIcon"><mat-icon>{{data.icon}}</mat-icon></div>
+    <div class="infoLabel">{{data.label}}</div>
+    <div class="infoTitle">{{data.info}}</div>
+</mat-card>

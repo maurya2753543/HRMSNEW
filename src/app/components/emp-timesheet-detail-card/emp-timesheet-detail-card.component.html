@@ -1,0 +1,40 @@
+<mat-card (click)="ViewTimesheet()">
+    <div class="cardContent">
+        <div class="empHeading">
+            <div class="profileDetails">
+                <div class="empImage">
+                    <img src="assets/images/user-avatar2.svg" alt="Vivek Gaur Image">
+                </div>
+                <div class="empDetail">
+                    <div class="mat-subheading-2">{{data.name}}</div>
+                    <div class="mat-body">{{data.hoursApproved}} hours approved this month</div>
+                </div>
+            </div>
+            <button mat-icon-button color="warn" [matMenuTriggerFor]="orgMenu" stopClickPropgation> 
+                <mat-icon>more_horiz</mat-icon>
+            </button>
+            <mat-menu #orgMenu="matMenu" xPosition="before">
+                <button mat-menu-item>
+                    <mat-icon>assignment_turned_in</mat-icon>
+                    <span>View & Approve Timesheet &nbsp;</span>
+                </button>
+                <button mat-menu-item>
+                    <mat-icon>publish</mat-icon>
+                    <span>Download This Month Timesheet</span>
+                </button>
+            </mat-menu>
+        </div>
+        <div class="orgDetails">
+            <div class="detail" matTooltip="Number of New Request" matTooltipPosition="before">
+                <mat-icon>hourglass_full</mat-icon>
+                <span>{{data.requestPending}} Request Pending</span>
+            </div>
+            <div class="detail" matTooltip="Billing Status" matTooltipPosition="before">
+                <mat-icon>monetization_on</mat-icon>
+                <span>{{data.billingStatus}}</span>
+            </div>
+        </div>
+    </div>
+    <!-- <mat-divider></mat-divider>
+    <div class="skills"></div> -->
+</mat-card>

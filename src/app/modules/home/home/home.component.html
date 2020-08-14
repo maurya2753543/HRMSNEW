@@ -1,0 +1,35 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Home</h1>
+    </div>
+</div>
+<div class="homeContainer">
+    <div class="row info">
+        <div class="col" *ngFor="let info of managementInfoData">
+            <app-home-info-card [data]="info"></app-home-info-card>
+        </div>
+    </div>
+
+    <!-- <div class="row pieChart">
+        <div class="col">
+            <app-emp-billing-trends></app-emp-billing-trends>
+        </div>
+
+        <div class="col">
+            <app-emp-type-trends></app-emp-type-trends> 
+        </div>
+
+        <div class="col">
+            <app-overall-project-trends></app-overall-project-trends> 
+        </div>
+    </div> -->
+
+    <div class="row chartsIframe">
+        <div class="col">
+            <iframe src="http://104.211.165.165/hrmsanalytics/#/hrms-dashboard">
+                <p>Your browser does not support iframes.</p>
+            </iframe>
+        </div>
+    </div>
+    
+</div>

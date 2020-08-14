@@ -1,0 +1,18 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Organizations</h1>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent" (click)="createOrg()">
+            <mat-icon>account_balance</mat-icon>
+            <span>Create Organization</span>
+        </button>
+    </div>
+</div>
+<div class="pageContent">
+    <div class="row">
+        <div class="col" *ngFor="let org of orgData">
+            <app-org-detail-card [data]="org"></app-org-detail-card> 
+        </div>
+    </div>
+</div>

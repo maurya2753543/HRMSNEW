@@ -1,0 +1,155 @@
+<mat-toolbar class="top">
+    <mat-toolbar-row>
+        <div class="mat-title">Timesheet - {{data.employeeName}}</div>
+        <div class="spacer"></div>
+        <div class="dateFilter">
+            <mat-form-field appearance="outline" class="statusFilter">
+                <mat-label>Status</mat-label>
+                <mat-select [(ngModel)]="statusFilter">
+                    <mat-option *ngFor="let status of ['All', 'Pending', 'Approved', 'Rejected']" [value]="status">
+                        {{status}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="statusFilter">
+                <mat-label>Billing Status</mat-label>
+                <mat-select [(ngModel)]="billingStatusFilter">
+                    <mat-option *ngFor="let status of ['All', 'Billable', 'Committed Buffer', 'Non Billable']" [value]="status">
+                        {{status}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline">
+                <mat-label>Date</mat-label>
+                <mat-select [(ngModel)]="dateFilter">
+                    <mat-option *ngFor="let filter of dateFilterList" [value]="filter.key">
+                        {{filter.value}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="dateField" *ngIf="dateFilter == 'custom-date'">
+                <mat-label>From Date</mat-label>
+                <input matInput [matDatepicker]="fromDatePicker">
+                <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #fromDatePicker></mat-datepicker>
+            </mat-form-field>
+    
+            <mat-form-field appearance="outline" class="dateField" *ngIf="dateFilter == 'custom-date'">
+                <mat-label>To Date</mat-label>
+                <input matInput [matDatepicker]="toDatePicker">
+                <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+                <mat-datepicker #toDatePicker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <button mat-icon-button color="warn" (click)="close()"> 
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<div class="formContainer">
+    <div class="row">
+        <div class="col">
+            <table mat-table [dataSource]="dataSource" matSort>
+
+                <ng-container matColumnDef="selection">
+                    <th mat-header-cell *matHeaderCellDef width="8%"> 
+                        <mat-checkbox>All</mat-checkbox>
+                    </th>
+                    <td mat-cell *matCellDef="let element"> 
+                        <mat-checkbox></mat-checkbox>
+                    </td>
+                </ng-container>
+            
+                <ng-container matColumnDef="date">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="17%"> Date </th>
+                    <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+                </ng-container>
+    
+                <!-- <ng-container matColumnDef="project">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="16%"> Project </th>
+                    <td mat-cell *matCellDef="let element"> {{element.project}} </td>
+                </ng-container> -->
+    
+                <ng-container matColumnDef="totalHour">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="10%"> Time </th>
+                    <td mat-cell *matCellDef="let element"> {{element.totalHour}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="activity">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="20%"> Activity </th>
+                    <td mat-cell *matCellDef="let element"> {{element.activity}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="status">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="12%"> Status </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-chip-list class="statusLabel">
+                            <mat-chip [class.rejected]="element.status == 'Rejected'" [class.pending]="element.status == 'Pending'" [class.approved]="element.status == 'Approved'">{{element.status}}</mat-chip>
+                        </mat-chip-list>                      
+                    </td>
+                </ng-container>
+
+                <ng-container matColumnDef="remarks">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="15%"> Remarks </th>
+                    <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+                </ng-container>
+    
+                <ng-container matColumnDef="billingStatus">
+                    <th mat-header-cell *matHeaderCellDef mat-sort-header width="18%">Billing Status  </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-chip-list class="statusLabel">
+                            <mat-chip [class.nonBillable]="element.billingStatus == 'Non Billable'" 
+                                [class.committedBuffer]="element.billingStatus == 'Committed Buffer'"
+                                [class.billable]="element.billingStatus == 'Billable'">{{element.billingStatus}}</mat-chip>
+                        </mat-chip-list>   
+                    </td>
+                </ng-container>
+    
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    
+            </table>
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<mat-toolbar class="bottom">
+    <mat-toolbar-row>
+        <mat-paginator [pageSize]="10" showFirstLastButtons></mat-paginator>
+        <div class="spacer"></div>
+        <button mat-flat-button color="primary">
+            <mat-icon>publish</mat-icon>&nbsp;
+            Export Timesheet&nbsp;
+        </button>
+        <button mat-flat-button color="primary" [matMenuTriggerFor]="billingMenu">
+            <mat-icon>monetization_on</mat-icon>&nbsp;
+            Change Billing&nbsp;
+        </button>
+        <mat-menu #billingMenu="matMenu" xPosition="before">
+            <button mat-menu-item>
+                <mat-icon>monetization_on</mat-icon>
+                <span>Billable &nbsp;</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>layers</mat-icon>
+                <span>Committed Buffer</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>money_off</mat-icon>
+                <span>Non Billable</span>
+            </button>
+        </mat-menu>
+        <button mat-flat-button color="warn">
+            <mat-icon>cancel</mat-icon>&nbsp;
+            Reject&nbsp;
+        </button>
+        <button mat-flat-button color="accent">
+            <mat-icon>assignment_turned_in</mat-icon>&nbsp;
+            Approve&nbsp;
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

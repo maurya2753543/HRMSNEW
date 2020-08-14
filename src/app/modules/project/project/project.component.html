@@ -1,0 +1,18 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Projects</h1>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent" (click)="createProject()">
+            <mat-icon>recent_actors</mat-icon>
+            <span>Create Project</span>
+        </button>
+    </div>
+</div>
+<div class="pageContent">
+    <div class="row">
+        <div class="col" *ngFor="let project of projectData">
+            <app-project-detail-card [data]="project"></app-project-detail-card> 
+        </div>
+    </div>
+</div>

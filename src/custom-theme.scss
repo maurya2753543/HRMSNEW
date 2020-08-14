@@ -1,0 +1,52 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$ps-angular-app-primary: mat-palette($mat-blue, A400, A700, A100);
+// $arttha-angular-app-accent: mat-palette($mat-red, A200, A100, A400);
+$ps-angular-app-accent: mat-palette($mat-teal, A400, A700, A100);
+// The warn palette is optional (defaults to red).
+$ps-angular-app-warn: mat-palette($mat-red, 500, A700, A100);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$ps-angular-app-theme: mat-light-theme($ps-angular-app-primary, $ps-angular-app-accent, $ps-angular-app-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($ps-angular-app-theme);
+
+// global color variables 
+$primary: mat-color($ps-angular-app-primary);
+$primaryA700: mat-color($ps-angular-app-primary,A700);
+$primaryA200: mat-color($ps-angular-app-primary,A200);
+$primaryA100: mat-color($ps-angular-app-primary,A100);
+$primary50: mat-color($ps-angular-app-primary,50);
+$primary100: mat-color($ps-angular-app-primary,100);
+$primary200: mat-color($ps-angular-app-primary,200);
+
+$accent: mat-color($ps-angular-app-accent);
+$accentA700: mat-color($ps-angular-app-accent,A700);
+$accentA200: mat-color($ps-angular-app-accent,A200);
+$accentA100: mat-color($ps-angular-app-accent,A100);
+$accent50: mat-color($ps-angular-app-accent,50);
+$accent100: mat-color($ps-angular-app-accent,100);
+$accent200: mat-color($ps-angular-app-accent,200);
+
+$warn: mat-color($ps-angular-app-warn);
+$warnA700: mat-color($ps-angular-app-warn,A700);
+$warnA200: mat-color($ps-angular-app-warn,A200);
+$warnA100: mat-color($ps-angular-app-warn,A100);
+$warn50: mat-color($ps-angular-app-warn,50);
+$warn100: mat-color($ps-angular-app-warn,100);
+$warn200: mat-color($ps-angular-app-warn,200);

@@ -1,0 +1,19 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Timesheet Approval Request</h1>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent">
+            <mat-icon>publish</mat-icon>
+            <span>Export Timesheet&nbsp;</span>
+        </button>
+    </div>
+</div>
+
+<div class="pageContent">
+    <div class="row">
+        <div class="col" *ngFor="let member of timesheetData">
+            <app-emp-timesheet-detail-card [data]="member"></app-emp-timesheet-detail-card> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+@import '../../../custom-theme.scss';
+
+.mat-toolbar{
+    background: #ffffff;
+}
+.mat-toolbar-multiple-rows {
+    padding-top: 3px;
+    min-height: 0;
+}
+
+.logo {
+    display: flex;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 180px;
+}

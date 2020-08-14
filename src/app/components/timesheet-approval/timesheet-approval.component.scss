@@ -1,0 +1,14 @@
+:host {
+    padding: 16px 8px 20px;
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 33.33%;
+    max-width: 33.33%;
+}

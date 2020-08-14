@@ -1,0 +1,50 @@
+<div class="pageHeader" *ngIf="orgData">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-icon-button color="warn" routerLink="/organization"> 
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div class="headingGroup">
+                <div class="headingLogo">
+                    <img [src]="orgData.logoIcon" [alt]="orgData.name + 'Logo Icon'">
+                </div>
+                <div class="headingDetails">
+                    <div class="headingTitle">{{orgData.name}}</div>
+                    <div class="headingSubtitle">{{orgData.industry}}</div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+</div>
+<section class="pageContent">
+    <div class="headingSection">
+        <div class="pageTitle">
+            <h1>Organization Details</h1>
+        </div>
+        <div class="insertButton">
+            <button mat-flat-button color="accent" (click)="updateOrg()">
+                <mat-icon>account_balance</mat-icon>
+                <span>Update Organization &nbsp;</span>
+            </button>
+        </div>
+    </div>
+    <div class="row info">
+        <div class="col" *ngFor="let info of orgInfoData">
+            <app-entity-info-card [data]="info"></app-entity-info-card>
+        </div>
+    </div>
+
+    <div class="aboutSection">
+        <div class="pageTitle">
+            <h2>About Organization</h2>
+        </div>
+        <div class="aboutContent mat-subheading-1" *ngIf="orgData">
+            <div class="orgLogo">
+                <img [src]="orgData.logo" [alt]="orgData.name + 'Logo'">
+            </div>
+            <span [innerHTML]="orgData.description"></span>
+        </div>
+    </div>
+</section>

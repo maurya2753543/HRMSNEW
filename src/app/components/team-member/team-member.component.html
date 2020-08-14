@@ -1,0 +1,18 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Team Members</h1>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent">
+            <mat-icon>people_alt</mat-icon>
+            <span>Add Member &nbsp;</span>
+        </button>
+    </div>
+</div>
+<div class="pageContent">
+    <div class="row">
+        <div class="col" *ngFor="let emp of empData">
+            <app-emp-detail-card [data]="emp"></app-emp-detail-card> 
+        </div>
+    </div>
+</div>

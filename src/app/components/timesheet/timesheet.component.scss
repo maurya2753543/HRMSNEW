@@ -1,0 +1,61 @@
+:host {
+    padding: 16px 8px 20px;
+    display: block;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.headingSection {
+    padding-bottom: 4px;
+}
+
+.dateFilter {
+    font-size: 13px;
+}
+
+.dateFilter .mat-form-field {
+    margin-right: 16px;
+}
+
+.dateFilter .mat-form-field::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+}
+
+.dateFilter .mat-form-field.mat-form-field-appearance-outline::ng-deep .mat-form-field-infix {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dateFilter .mat-form-field::ng-deep .mat-select-value {
+    position: relative;
+    top: -3px;
+}
+
+.statusFilter {
+    width: 120px;
+}
+
+.dateField {
+    width: 140px;
+}
+
+.dateFilter .mat-form-field-appearance-outline::ng-deep .mat-form-field-label {
+    margin-top: -7px;
+}
+
+.dateFilter::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    margin-top: -5px;
+}
+
+.dateFilter::ng-deep input.mat-input-element {
+    position: relative;
+    top: -3px;
+}

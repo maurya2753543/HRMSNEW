@@ -1,0 +1,51 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Timesheet</h1>
+    </div>
+    <div class="dateFilter">
+        <mat-form-field appearance="outline" class="statusFilter">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="statusFilter">
+                <mat-option *ngFor="let status of ['All', 'Submitted', 'Approved']" [value]="status">
+                    {{status}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+            <mat-label>Date</mat-label>
+            <mat-select [(ngModel)]="dateFilter">
+                <mat-option *ngFor="let filter of dateFilterList" [value]="filter.key">
+                    {{filter.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="dateField" *ngIf="dateFilter == 'custom-date'">
+            <mat-label>From Date</mat-label>
+            <input matInput [matDatepicker]="fromDatePicker">
+            <mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #fromDatePicker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="dateField" *ngIf="dateFilter == 'custom-date'">
+            <mat-label>To Date</mat-label>
+            <input matInput [matDatepicker]="toDatePicker">
+            <mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+            <mat-datepicker #toDatePicker></mat-datepicker>
+        </mat-form-field>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent" (click)="fillTimesheet()">
+            <mat-icon>schedule</mat-icon>
+            <span>Fill Timesheet</span>
+        </button>
+    </div>
+</div>
+<div class="pageContent">
+    <div class="row">
+        <div class="col">
+            <app-timesheet-detail-card></app-timesheet-detail-card> 
+        </div>
+    </div>
+</div>

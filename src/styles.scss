@@ -1,0 +1,170 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./custom-theme.scss";
+
+* {
+    outline: 0;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+img { max-width: 100%; vertical-align: top;}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.mat-card {
+    margin: 8px;
+    box-shadow: none !important;
+    background: #f5f5f5 !important;
+    border: 1px solid #e1e1e1;
+    color: #000000;
+    flex: 1;
+    display: flex !important;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 5px !important;
+}
+
+.mat-card.clickable, .clickable {
+    cursor: pointer;
+    transition: all 0.7s;
+    position: relative;
+}
+
+.mat-card.clickable::before, .mat-card.clickable::after, .clickable::before, .clickable::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+    background-color: $accent100;
+    transform: scale(0);
+    left: 50%;
+    top: 50%;
+    margin-top: -150px;
+    margin-left: -150px;
+    opacity: 0;
+    transition: all 0.4s;
+    z-index: -99999;
+}
+
+.mat-card.clickable::after, .clickable::after {
+    background-color: $accent50;
+    transition-delay: 0.3s;
+}
+
+.mat-card.clickable:hover, .clickable:hover{
+    transform: scale(1.04) !important;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1) !important;
+    border-color: $accent200 !important;
+}
+.mat-card.clickable:hover::before, .mat-card.clickable:hover::after, .clickable:hover::before, .clickable:hover::after{
+    opacity: 1;
+    transform: scale(2);
+}
+
+.mat-card.clickable:hover::after, .clickable:hover::after {
+    opacity: 0.8;
+}
+
+.mat-card.clickable:hover .detail .mat-icon {
+    border-color: $accent200;
+}
+
+.headingSection {
+    display: flex;
+    padding: 0 8px 8px;
+    align-items: center;
+}
+
+.pageTitle {
+    flex: 1;
+}
+
+.pageTitle h1 {
+    font-size: 20px;
+    margin-bottom: 0;
+    font-weight: 500;
+    //color: $primary;
+}
+
+.insertButton .mat-flat-button .mat-icon {
+    margin-right: 10px;
+}
+
+.mat-flat-button.mat-accent:hover {
+    background: $accentA700 !important;
+}
+
+.mat-flat-button.mat-warn:hover {
+    background: $warnA700 !important;
+}
+
+.mat-flat-button.mat-primary:hover {
+    background: $primaryA700 !important;
+}
+
+.mat-flat-button.mat-accent {
+    color: #ffffff !important; 
+}
+
+.mat-button, .mat-icon-button, .mat-stroked-button, .mat-flat-button {
+    line-height: 40px !important;
+}
+
+.mat-icon-button.mat-warn:hover .mat-icon {
+    color: $warnA700;
+}
+
+.row, .col {
+    box-sizing: border-box;
+}
+
+.pageHeader .mat-toolbar {
+    min-height: 54px;
+}
+
+.pageHeader .mat-toolbar-row {
+    height: 54px;
+}
+
+.headingLogo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #E2E5E8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.headingLogo img {
+    width: 24px;
+}
+
+.headingGroup {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.headingDetails {
+    padding-left: 16px;
+    line-height: 22px;
+}
+
+.headingTitle {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.headingSubtitle {
+    font-size: 12px;
+    color: #84858A;
+    font-weight: 400;
+    line-height: normal;
+}

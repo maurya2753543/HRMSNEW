@@ -1,0 +1,140 @@
+@import "../../../custom-theme.scss";
+
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.mat-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #ffffff !important;
+    border-color: $primary200;
+    padding-bottom: 13px;
+}
+
+.infoIcon {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: $primary50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+
+.infoIcon .mat-icon {
+    font-size: 30px;
+    height: 34px;
+    width: 34px;
+    text-align: center;
+    line-height: 34px;
+    color: $primary;
+}
+
+.infoTitle {
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 500;
+    text-align: center;
+    padding-top: 2px;
+}
+
+.infoLabel {
+    font-size: 12px;
+    padding-top: 8px;
+    color: rgba(0,0,0,0.6);
+}
+
+.mat-card.primary.clickable::after {
+    background-color: $primary50;
+}
+
+.mat-card.primary.clickable::before {
+    background-color: $primary100;
+}
+
+.mat-card.primary.clickable:hover {
+    border-color: $primary200 !important;
+}
+
+.mat-card.primary.clickable:hover .infoIcon {
+    border-color: $primary100 !important;
+}
+
+.mat-card.accent {
+    border-color: $accent200;
+}
+
+.mat-card.accent .infoIcon {
+    background: $accent50;
+}
+
+.mat-card.accent .infoIcon .mat-icon {
+    color: $accentA700;
+}
+
+.mat-card.accent.clickable .infoTitle {
+    color: $accentA700;
+}
+
+.mat-card.accent.clickable::after {
+    background-color: $accent50;
+}
+
+.mat-card.accent.clickable::before {
+    background-color: $accent100;
+}
+
+.mat-card.accent.clickable:hover {
+    border-color: $accent200 !important;
+}
+
+.mat-card.accent.clickable:hover .infoIcon {
+    border-color: $accent100 !important;
+}
+
+.mat-card.warn {
+    border-color: $warn200;
+}
+
+.mat-card.warn .infoIcon {
+    background: $warn50;
+}
+
+.mat-card.warn .infoIcon .mat-icon {
+    color: $warn;
+}
+
+.mat-card.warn.clickable .infoTitle {
+    color: $warn;
+}
+
+.mat-card.warn.clickable::after {
+    background-color: $warn50;
+}
+
+.mat-card.warn.clickable::before {
+    background-color: $warn100;
+}
+
+.mat-card.warn.clickable:hover {
+    border-color: $warn200 !important;
+}
+
+.mat-card.warn.clickable:hover .infoIcon {
+    border-color: $warn100 !important;
+}
+
+.clickable .infoTitle {
+    color: $primary;
+}
+
+.clickable:hover .infoIcon {
+    background-color: #ffffff;
+    border: 1px solid $accent100;
+    box-sizing: border-box;
+}

@@ -1,0 +1,159 @@
+
+<div class="pageHeader">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-icon-button color="warn" routerLink="/employee"> 
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div class="headingGroup">
+                <div class="headingLogo">
+                    <img src="assets/images/mhk-logo.png" alt="MHK Logo">
+                </div>
+                <div class="headingDetails">
+                    <div class="headingTitle">MHK Admin App</div>
+                    <div class="headingSubtitle">Client: MHK</div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+</div>
+<div class="tabGroup">
+    <mat-tab-group dynamicHeight color="primary">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>dns</mat-icon>
+                Employee Details
+            </ng-template>
+            <div class="tabContent projectDetails mat-subheading-1">
+                <div class="img_t">
+                    <img [src]="url ? url : 'https://www.w3schools.com/howto/img_avatar.png'"> <br/>
+                       <input type='file' (change)="onSelectFile($event)">
+                </div>
+                <mat-grid-list [style.background-color]="'#E5E3E3'"
+                cols="8" rowHeight="4:1">
+                <mat-grid-tile><b>Full Name</b></mat-grid-tile>
+                <mat-grid-tile><b>Employee code</b></mat-grid-tile>
+                <mat-grid-tile><b>Employee Email</b></mat-grid-tile>
+                <mat-grid-tile><b>Contact No</b></mat-grid-tile>
+                <mat-grid-tile><b>Date of birth</b></mat-grid-tile>
+                <mat-grid-tile><b>Marital Status</b></mat-grid-tile>
+                <mat-grid-tile class="title_break"><b> Address</b></mat-grid-tile>
+                <mat-grid-tile><b>position</b></mat-grid-tile>
+              </mat-grid-list>
+   
+            </div>
+            <div class="div-title">
+                <mat-grid-list
+                cols="8" rowHeight="4:1">
+                <mat-grid-tile>Neeraj maurya</mat-grid-tile>
+                <mat-grid-tile>10500</mat-grid-tile>
+                <mat-grid-tile class="emai_b">neeraj.maurya@puresoftware.com</mat-grid-tile>
+                <mat-grid-tile>7355297584</mat-grid-tile>
+                <mat-grid-tile>03/12/1996</mat-grid-tile>
+                <mat-grid-tile>Single</mat-grid-tile>               
+                <mat-grid-tile class="add_break">BHU varanasi</mat-grid-tile>
+                <mat-grid-tile>Software Engineer</mat-grid-tile>                
+              </mat-grid-list>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>work</mat-icon>
+                Work Experience 
+            </ng-template>
+            <div class="tabContent">
+                <mat-grid-list [style.background-color]="'#E5E3E3'"
+                cols="8" rowHeight="4:1">
+                <mat-grid-tile><b>Oraganization</b></mat-grid-tile>
+                <mat-grid-tile><b>Designation</b></mat-grid-tile>
+                <mat-grid-tile><b>From</b></mat-grid-tile>
+                <mat-grid-tile><b>To</b></mat-grid-tile>
+                <mat-grid-tile><b>Industry</b></mat-grid-tile>
+                <mat-grid-tile><b>Annual Salary</b></mat-grid-tile>
+                <mat-grid-tile ><b> Currency</b></mat-grid-tile>
+                <mat-grid-tile><b>Reason For Change</b></mat-grid-tile>
+              </mat-grid-list>
+            </div>
+            <div class="div-title">
+                <mat-grid-list
+                cols="8" rowHeight="4:1">
+                <mat-grid-tile>Puresoftware Pvt ltd..</mat-grid-tile>
+                <mat-grid-tile>10500</mat-grid-tile>
+                <mat-grid-tile >Software Engineer</mat-grid-tile>
+                <mat-grid-tile>17/06/2019</mat-grid-tile>
+                <mat-grid-tile>20/06/2021</mat-grid-tile>
+                <mat-grid-tile>275000</mat-grid-tile>               
+                <mat-grid-tile >Rs ..</mat-grid-tile>
+                <mat-grid-tile>Nothing</mat-grid-tile>                
+              </mat-grid-list>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>school</mat-icon>                
+                Qualification Information 
+            </ng-template>
+            <div class="tabContent">
+                <mat-grid-list [style.background-color]="'#E5E3E3'"
+                cols="8" rowHeight="4:1">                  
+                <mat-grid-tile><b>Course</b></mat-grid-tile>
+                <mat-grid-tile class="title_break"><b>Name of University/Board</b></mat-grid-tile>
+                <mat-grid-tile class="title_break"><b>%of Marks /CGPA</b></mat-grid-tile>
+                <mat-grid-tile><b>Passing year</b></mat-grid-tile>
+                <mat-grid-tile><b>Education Gap</b></mat-grid-tile>
+                <mat-grid-tile ><b> Higher Qualification</b></mat-grid-tile>
+                <mat-grid-tile><b>Certificate</b></mat-grid-tile>                  
+              </mat-grid-list>
+            </div>
+            <div class="div-title">
+                <mat-grid-list
+                cols="8" rowHeight="4:1">                  
+                <mat-grid-tile>B.tech(cse)</mat-grid-tile>
+                <mat-grid-tile class="title_break" >Galgotias University</mat-grid-tile>
+                <mat-grid-tile>79%</mat-grid-tile>
+                <mat-grid-tile>2019</mat-grid-tile>
+                <mat-grid-tile>0</mat-grid-tile>   
+                <mat-grid-tile>B.tech</mat-grid-tile>            
+                <mat-grid-tile class="title_break">Angular js</mat-grid-tile>                               
+              </mat-grid-list>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>assignment_turned_in</mat-icon>
+              Timesheet
+            </ng-template>
+            <div class="tabContent">
+                
+            </div>
+        </mat-tab>       
+        
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>library_books</mat-icon>
+                Task
+            </ng-template>
+            <div class="tabContent">
+                <div style="padding: 20px;">Coming Soon...</div>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>message</mat-icon>
+                Message
+            </ng-template>
+           
+        </mat-tab>
+        <!-- <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>timeline</mat-icon>
+                Timeline
+            </ng-template>
+            <div class="tabContent">
+                Timeline
+            </div>
+        </mat-tab> -->
+    </mat-tab-group>
+</div>

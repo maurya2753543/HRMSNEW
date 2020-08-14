@@ -1,0 +1,141 @@
+@import "../../../../custom-theme.scss";
+
+:host {
+    padding: 16px 8px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 33.33%;
+    max-width: 33.33%;
+    display: flex;
+}
+
+.headingSection {
+    padding-bottom: 4px;
+}
+
+.dateFilter {
+    font-size: 13px;
+}
+
+.dateFilter .mat-form-field {
+    margin-right: 16px;
+}
+
+.dateFilter .mat-form-field::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+}
+
+.dateFilter .mat-form-field.mat-form-field-appearance-outline::ng-deep .mat-form-field-infix {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.dateFilter .mat-form-field::ng-deep .mat-select-value {
+    position: relative;
+    top: -3px;
+}
+
+.statusFilter {
+    width: 120px;
+}
+
+.searchField {
+    width: 180px;
+}
+
+.dateField, .reportingManager, .projectFilter {
+    width: 140px;
+}
+
+.dateFilter .mat-form-field-appearance-outline::ng-deep .mat-form-field-label {
+    margin-top: -7px;
+}
+
+.dateFilter::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    margin-top: -5px;
+}
+
+.dateFilter::ng-deep input.mat-input-element {
+    position: relative;
+    top: -3px;
+}
+
+.pagination {
+    padding-top: 4px;
+}
+
+.pagination::ng-deep .ngx-pagination {
+    margin: 0;
+    padding: 0 7px;
+    text-align: right; 
+}
+
+.pagination::ng-deep .ngx-pagination li {
+    vertical-align: top;
+    margin: 5px 0 5px 7px;
+}
+
+.pagination::ng-deep .ngx-pagination li a, 
+.pagination::ng-deep .ngx-pagination .pagination-previous.disabled,
+.pagination::ng-deep .ngx-pagination .pagination-next.disabled,
+.pagination::ng-deep .ngx-pagination .current {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border: 1px solid #e1e1e1;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    color: #333333; 
+    padding: 0;
+}
+
+.pagination::ng-deep .ngx-pagination .current {
+    background: $primary;
+    color: #ffffff;
+    border-color: $primary;
+}
+
+.pagination::ng-deep .ngx-pagination .pagination-previous a, 
+.pagination::ng-deep .ngx-pagination .pagination-next a {
+    background: $accent;
+    color: #ffffff;
+    border-color: $accent; 
+}
+
+.pagination::ng-deep .ngx-pagination .pagination-previous a, 
+.pagination::ng-deep .ngx-pagination .pagination-previous.disabled,
+.pagination::ng-deep .ngx-pagination .pagination-next a, 
+.pagination::ng-deep .ngx-pagination .pagination-next.disabled { 
+    text-indent: -99999px;
+    position: relative;
+}
+
+.pagination::ng-deep .ngx-pagination .pagination-previous a::before, 
+.pagination::ng-deep .ngx-pagination .pagination-previous.disabled::before,
+.pagination::ng-deep .ngx-pagination .pagination-next a::after, 
+.pagination::ng-deep .ngx-pagination .pagination-next.disabled::after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    line-height: 36px;
+    text-align: center;
+    margin: 0;
+    text-indent: 0px;
+    font-size: 24px; 
+}
+
+.pagination::ng-deep .ngx-pagination .pagination-previous.disabled,
+.pagination::ng-deep .ngx-pagination .pagination-next.disabled {
+    background: #cccccc;
+    color: #666666 ;
+    border-color: #bbbbbb;
+}

@@ -1,0 +1,68 @@
+@import "../../../../custom-theme.scss";
+
+.tabGroup::ng-deep .mat-tab-header{
+    background-color: #f5f5f5;
+}
+
+.tabGroup::ng-deep .mat-tab-header .mat-icon {
+    margin-right: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    color: $primary;
+}
+
+.tabGroup::ng-deep .mat-tab-header .mat-tab-labels {
+    justify-content: center;
+}
+
+.tabGroup::ng-deep .mat-tab-header .mat-tab-label {
+    opacity: 1;
+    min-width: 0;
+    font-size: 13px;
+}
+
+.tabGroup::ng-deep .mat-tab-header .mat-tab-label.mat-tab-label-active {
+    color: $primary;
+}
+
+.tabGroup::ng-deep .mat-tab-header .mat-tab-label.mat-tab-label-active .mat-icon {
+    background-color: $primary;
+    color: #ffffff;
+    border: 1px solid $primary;
+}
+
+.projectDetails {
+    padding: 20px;
+}
+
+.title_break{
+    word-break: break-all;
+    word-wrap: 100px;
+}
+.emai_b{
+    word-break: break-all;
+    word-wrap: 100px;
+
+}
+.add_break{
+    word-wrap: 100px;
+    word-break: break-all;
+}
+
+  
+div .img_t {
+    
+    width: 100px;
+    margin-bottom: 50px;   
+    border-radius: 50%;
+  }
+  img {
+    border-radius: 50%;
+}

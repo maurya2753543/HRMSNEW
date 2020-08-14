@@ -1,0 +1,57 @@
+<mat-card>
+    <mat-card-content>
+        <table mat-table [dataSource]="dataSource" matSort>
+            
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="17%"> Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+            </ng-container>
+
+            <!-- <ng-container matColumnDef="project">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="16%"> Project </th>
+                <td mat-cell *matCellDef="let element"> {{element.project}} </td>
+            </ng-container> -->
+
+            <ng-container matColumnDef="totalHour">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="13%"> Time </th>
+                <td mat-cell *matCellDef="let element"> {{element.totalHour}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="activity">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="25%"> Activity </th>
+                <td mat-cell *matCellDef="let element" class="paddingRight40"> {{element.activity}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="status">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="14%"> Status </th>
+                <td mat-cell *matCellDef="let element">
+                    <mat-chip-list class="statusLabel">
+                        <mat-chip [class.rejected]="element.status == 'Rejected'" [class.submitted]="element.status == 'Submitted'" [class.approved]="element.status == 'Approved'">{{element.status}}</mat-chip>
+                    </mat-chip-list>                      
+                </td>
+            </ng-container>
+
+            <ng-container matColumnDef="remarks">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="18%"> Remarks </th>
+                <td mat-cell *matCellDef="let element"> {{element.remarks}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header width="13%">  </th>
+                <td mat-cell *matCellDef="let element">
+                    <button mat-icon-button color="warn" *ngIf="element.status != 'Approved'" class="actionButton"> 
+                        <mat-icon>rate_review</mat-icon>
+                    </button>
+                    <button mat-icon-button color="warn" *ngIf="element.status != 'Approved'" class="actionButton"> 
+                        <mat-icon>delete_sweep</mat-icon>
+                    </button>   
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+        </table>
+    </mat-card-content>
+    <mat-paginator [pageSize]="10" showFirstLastButtons></mat-paginator>
+</mat-card>

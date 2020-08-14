@@ -1,0 +1,63 @@
+@import "../../../custom-theme.scss";
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content-container {
+    flex: 1;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-section {
+    // padding: 20px 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+}
+
+.mat-sidenav-container {
+    width: 100%;
+    background: none;
+    height: 100%;
+}
+
+.mat-sidenav {
+    border: 0;
+}
+
+.mat-sidenav.mainMenu {
+    width: 260px;
+    background: $primary;
+    color: #ffffff;
+    transition: all 0.3s;
+}
+
+.collapsed .mat-sidenav.mainMenu {
+    width: 72px;
+}
+
+.collapsed.mat-drawer-transition::ng-deep .mat-drawer-content {
+    margin-left: 72px !important;
+}
+
+.mat-drawer-side {
+    border-right: 0;
+}
+
+::ng-deep .mat-drawer-inner-container {
+    display: flex;
+}
+
+.sidenav-content {
+    overflow: hidden;
+}
+
+.sidePanel {
+    max-width: 80%;
+}

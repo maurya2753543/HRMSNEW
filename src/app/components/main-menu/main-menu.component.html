@@ -1,0 +1,84 @@
+<div class="profileOverview">
+    <mat-list>
+        <mat-list-item [matTooltip]="!expanded ? 'Vivek Gaur - Technical Architect': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>
+                <img src="assets/images/user-avatar3.svg" alt="User Profile Image">
+            </mat-icon>
+            <div mat-line class="title">Vivek Gaur</div>
+            <div mat-line class="subtitle">Technical Architect</div>
+        </mat-list-item>
+    </mat-list>
+    <mat-divider></mat-divider>
+</div>
+<div class="menuContainer">
+    <mat-action-list>
+        <button mat-list-item routerLink="/home" routerLinkActive="active" [matTooltip]="!expanded ? 'Home': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>home</mat-icon> 
+            <div mat-line class="title">Home</div>
+        </button>
+        <!-- <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>person</mat-icon>
+            <div mat-line class="title">Profile</div>
+        </button> -->
+        <!-- <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>message</mat-icon>
+            <div mat-line class="title">Message</div>
+        </button>
+        <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>library_books</mat-icon>
+            <div mat-line class="title">Task</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" routerLink="/timesheet">
+            <mat-icon mat-list-icon>schedule</mat-icon>
+            <div mat-line class="title">Timesheet</div>
+        </button> -->
+        <!-- <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>event_available</mat-icon>
+            <div mat-line class="title">Attendance</div>
+        </button>
+        <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>work_off</mat-icon>
+            <div mat-line class="title">Leave</div>
+        </button>
+        <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>account_balance_wallet</mat-icon>
+            <div mat-line class="title">Payroll</div>
+        </button>
+        <button mat-list-item routerLinkActive="active">
+            <mat-icon mat-list-icon>emoji_events</mat-icon>
+            <div mat-line class="title">Performance</div>
+        </button> -->
+        <button mat-list-item routerLinkActive="active" routerLink="/employee" [matTooltip]="!expanded ? 'Employees': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>people_alt</mat-icon>
+            <div mat-line class="title">Employees</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" [matTooltip]="!expanded ? 'Departments': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>portrait</mat-icon>
+            <div mat-line class="title">Departments</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" routerLink="/project" [matTooltip]="!expanded ? 'Projects': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>dns</mat-icon>
+            <div mat-line class="title">Projects</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" routerLink="/client" [matTooltip]="!expanded ? 'Clients': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>recent_actors</mat-icon>
+            <div mat-line class="title">Clients</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" routerLink="/organization" [matTooltip]="!expanded ? 'Organizations': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>account_balance</mat-icon>
+            <div mat-line class="title">Organizations</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" [matTooltip]="!expanded ? 'Analytics': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>assessment</mat-icon>
+            <div mat-line class="title">Analytics</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" [matTooltip]="!expanded ? 'Settings': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>settings</mat-icon>
+            <div mat-line class="title">Settings</div>
+        </button>
+        <button mat-list-item routerLinkActive="active" [matTooltip]="!expanded ? 'Help': ''" matTooltipPosition="after">
+            <mat-icon mat-list-icon>help</mat-icon>
+            <div mat-line class="title">Help</div>
+        </button>
+    </mat-action-list>
+</div>

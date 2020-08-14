@@ -1,0 +1,84 @@
+<mat-toolbar class="top">
+    <mat-toolbar-row>
+        <div class="mat-title">Fill Timesheet - {{data.projectName}}</div>
+        <div class="spacer"></div>
+        <button mat-stroked-button color="primary" class="addTimeButton" (click)="addTime()">
+            <mat-icon>add_circle</mat-icon>&nbsp;
+            New Entry&nbsp;
+        </button>
+        <button mat-icon-button color="warn" (click)="close()"> 
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<div class="formContainer">
+    <div class="row">
+        <div class="col" *ngFor="let data of formData; let formIndex = index">
+            <mat-card>
+                <div class="formRow">
+                    <div class="formCol">
+                        <div class="formNo">{{formIndex+1}}</div>
+                    </div>
+                    <div class="formCol dateField">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select Date</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+
+                    <!-- <div class="formCol projectField">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Select Project</mat-label>
+                            <mat-select>
+                                <mat-option *ngFor="let project of ['PureSoftware Pool', 'MHK Admin App']" [value]="project">
+                                    {{project}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div> -->
+
+                    <div class="formCol hourField">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Billing Hours</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="formCol hourField">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Additional Hours</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="formCol activityField">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Activity</mat-label>
+                            <input matInput>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="formCol deleteButton" *ngIf="formData.length > 1">
+                        <button mat-icon-button color="warn" (click)="deleteTime(formIndex)"> 
+                            <mat-icon>delete_sweep</mat-icon>
+                        </button>
+                    </div>
+                </div>
+                <!-- <mat-divider></mat-divider> -->
+            </mat-card>
+        </div>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<mat-toolbar>
+    <mat-toolbar-row>
+        <div class="spacer"></div>
+        <button mat-flat-button color="accent">
+            <mat-icon>schedule</mat-icon>&nbsp;
+            Submit Timesheet&nbsp;
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>

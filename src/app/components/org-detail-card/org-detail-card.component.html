@@ -1,0 +1,42 @@
+<mat-card class="clickable" [routerLink]="'/organization/details/' + data.id" matRipple>
+    <div class="orgHeading">
+        <div class="orgLogo">
+            <img [src]="data.logo" [alt]="data.name + 'Organization Logo'">
+        </div>
+        <button mat-icon-button color="warn" [matMenuTriggerFor]="orgMenu" stopClickPropgation> 
+            <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #orgMenu="matMenu" xPosition="before">
+            <button mat-menu-item [routerLink]="'/organization/details/' + data.id">
+                <mat-icon>slideshow</mat-icon>
+                <span>View Details</span>
+            </button>
+            <button mat-menu-item (click)="updateOrg()">
+                <mat-icon>rate_review</mat-icon>
+                <span>Updated Organization</span>
+            </button>
+        </mat-menu>
+    </div>
+    <div class="orgDetails">
+        <div class="detail mat-subheading-2" matTooltip="Organization" matTooltipPosition="before">
+            <mat-icon>account_balance</mat-icon>
+            <span>{{data.name}}</span>
+        </div>
+        <div class="detail" matTooltip="Industry" matTooltipPosition="before">
+            <mat-icon>domain</mat-icon>
+            <span>{{data.industry}}</span>
+        </div>
+        <div class="detail link" matTooltip="Website" matTooltipPosition="before" stopClickPropgation (click)="openWebsite(data.website)">
+            <mat-icon>public</mat-icon>
+            <span>{{data.website}}</span>
+        </div>
+        <div class="detail flex50" matTooltip="Total Employee" matTooltipPosition="before">
+            <mat-icon>people_alt</mat-icon>
+            <span>{{data.noOfEmployee}}</span>
+        </div>
+        <div class="detail flex50" matTooltip="Country" matTooltipPosition="before">
+            <mat-icon>flag</mat-icon>
+            <span>{{data.country}}</span>
+        </div>
+    </div>
+</mat-card>

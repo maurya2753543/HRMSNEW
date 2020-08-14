@@ -1,0 +1,107 @@
+@import "../../../custom-theme.scss";
+
+:host {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.mat-toolbar.top {
+    min-height: 54px;
+}
+
+.mat-toolbar.top .mat-toolbar-row {
+    height: 54px;
+}
+
+.mat-toolbar.top .mat-title {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.formContainer {
+    flex: 1;
+    overflow: auto;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.formRow {
+    display: flex;
+    padding: 0px 8px 0px;
+}
+
+.formCol {
+    padding: 0px 8px 8px;
+}
+
+.dateField {
+    flex: 20%;
+    max-width: 20%;
+}
+
+.projectField {
+    flex: 20%;
+    max-width: 20%;
+}
+
+.hourField {
+    flex: 15%;
+    max-width: 15%;
+}
+
+.activityField {
+    flex: 1;
+}
+
+.deleteButton {
+    padding-top: 5px;
+}
+
+.formContainer .mat-card {
+    margin: 0;
+    border-radius: 0;
+    border: 0;
+    background: none !important;
+    padding: 0;
+    font-size: 13px;
+
+    .mat-divider {
+        position: static;
+    }
+
+    .mat-form-field {
+        width: 100%;
+    }
+}
+
+.formNo {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 34px;
+    background: $primaryA100;
+    border: 1px solid $primaryA200;
+    color: #ffffff;
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+.addTimeButton {
+    margin-right: 20px;
+    line-height: 34px !important;
+    font-size: 13px !important;
+}

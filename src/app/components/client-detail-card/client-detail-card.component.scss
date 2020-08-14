@@ -1,0 +1,78 @@
+@import "../../../custom-theme.scss";
+
+:host {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.orgHeading {
+    display: flex;
+    align-items: center;
+}
+
+.orgLogo {
+    flex: 1;
+}
+
+.orgLogo img {
+    height: 40px
+}
+
+.orgDetails {
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.detail {
+    flex: 100%;
+    display: flex;
+    margin-top: 7px;
+    align-items: center;
+    margin-bottom: 0;
+    font-weight: 300;
+    font-size: 13px;
+}
+
+.detail .mat-icon {
+    margin-right: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    width: 28px;
+    min-width: 28px;
+    height: 28px;
+    line-height: 28px;
+    font-size: 17px;
+    text-align: center;
+    border: 1px solid #e1e1e1;
+    color: $primary;
+}
+
+.detail span{
+    flex: 1;
+}
+
+.detail.mat-subheading-2 {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.detail.link {
+    color: $primary;
+    cursor: pointer;
+}
+
+.detail.link:hover {
+    color: $warn;
+}
+
+.detail.link:hover .mat-icon {
+    background: $primary;
+    color: #ffffff;
+    border-color: $primary ;
+}
+
+.detail.flex50 {
+    flex: 50%;
+}

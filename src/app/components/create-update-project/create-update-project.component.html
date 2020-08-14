@@ -1,0 +1,110 @@
+<mat-toolbar class="top">
+    <mat-toolbar-row>
+        <div class="mat-title">
+            <span *ngIf="data.action == 'create'">Create New Project</span>
+            <span *ngIf="data.action == 'update'">Update Project</span>
+        </div>
+        <div class="spacer"></div>
+        <button mat-icon-button color="warn" (click)="close()"> 
+            <mat-icon>close</mat-icon>
+        </button>
+    </mat-toolbar-row>
+</mat-toolbar>
+<mat-divider></mat-divider>
+<form autocomplete="off" novalidate [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="formContainer">
+        <div class="row">
+            <div class="col">
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Organization Name</mat-label>
+                    <input type="text" formControlName="name" required matInput placeholder="Enter organization name...">
+                    <mat-error *ngIf="hasError('name', 'required')">Organization name is mandatory.</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col">                
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Client Name</mat-label>
+                    <input type="text"
+                           placeholder="Enter Project name .."
+                           aria-label="client"
+                           required
+                           matInput
+                           formControlName="client"
+                           [matAutocomplete]="clientAuto">
+                    <mat-autocomplete #clientAuto="matAutocomplete">
+                      <mat-option *ngFor="let option of ['HRMS' ,'Puresoftware','MHK','AMTRUST','MANDIRI  BANK','Mashreq']" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>    
+                    <mat-error *ngIf="hasError('client', 'required')">Client Name is mandatory.</mat-error>             
+                </mat-form-field>
+            </div>
+            <div class="col">
+                <mat-form-field appearance="fill" >
+                    <mat-label>Total Employee ..</mat-label>
+                    <input type="number" formControlName="totalEmployee" required  matInput placeholder="Total Employee...">   
+                    <mat-error *ngIf="hasError('totalEmployee', 'required')"> Total Employee is mandatory.</mat-error>
+                </mat-form-field>
+            </div>         
+
+            <div class="col">
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Progress</mat-label>
+                    <input type="text" formControlName="progress" required  matInput placeholder="Progress..."> 
+                    <mat-error *ngIf="hasError('progress', 'required')">Progress is mandatory.</mat-error>               
+                </mat-form-field>
+            </div> 
+            <div class="col">               
+                <mat-form-field appearance="fill" [hideRequiredMarker]="false">
+                    <mat-label>Status</mat-label>
+                    <input type="text"
+                           placeholder="Enter Status  name .."
+                           aria-label="status"
+                           required
+                           matInput
+                           formControlName="status"
+                           [matAutocomplete]="statusAuto">
+                    <mat-autocomplete #statusAuto="matAutocomplete">
+                      <mat-option *ngFor="let option of ['inprogress' ,'completed','Progess','Backlog','Upcoming']" [value]="option">
+                        {{option}}
+                      </mat-option>
+                    </mat-autocomplete>    
+                    <mat-error *ngIf="hasError('status', 'required')">Status is Mandatory</mat-error>             
+                </mat-form-field>
+            </div>                
+           
+            <div class="size-col">                
+                  <mat-form-field  class="example-full-width" appearance="fill" appearance="fill">
+                    <mat-label>From </mat-label>
+                    <input  formControlName="duration" matInput [matDatepicker]="picker1">
+                    <mat-error *ngIf="hasError('duration', 'required')">Total Duration is mandatory...</mat-error>            
+                    <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                    <mat-datepicker #picker1></mat-datepicker>
+                  </mat-form-field>                  
+                  <mat-form-field  class="example-full-width"  appearance="fill">
+                    <mat-label>To </mat-label>
+                    <input  formControlName="duration" matInput [matDatepicker]="picker2">
+                    <mat-error *ngIf="hasError('duration', 'required')">Total Duration is mandatory...</mat-error>            
+                    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                    <mat-datepicker #picker2 color="primary"></mat-datepicker>
+                  </mat-form-field>
+            </div>
+          
+        
+              
+        </div>
+    </div>
+    <mat-divider></mat-divider>
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <div class="spacer"></div>
+            <button mat-flat-button color="accent" >
+                <span class="material-icons">assignment_ind
+                    </span>&nbsp;
+                <span *ngIf="data.action == 'create'">Create</span>
+                <span *ngIf="data.action == 'update'">Update</span> 
+                Project&nbsp;
+            </button>                  
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

@@ -1,0 +1,50 @@
+<div class="pageHeader" *ngIf="clientData">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-icon-button color="warn" routerLink="/client"> 
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div class="headingGroup">
+                <div class="headingLogo">
+                    <img [src]="clientData.logoIcon" [alt]="clientData.client + 'Logo Icon'">
+                </div>
+                <div class="headingDetails">
+                    <div class="headingTitle">{{clientData.client}}</div>
+                    <div class="headingSubtitle">{{clientData.industry}}</div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+</div>
+<section class="pageContent">
+    <div class="headingSection">
+        <div class="pageTitle">
+            <h1>Client Details</h1>
+        </div>
+        <div class="insertButton">
+            <button mat-flat-button color="accent" (click)="updateClient()">
+                <mat-icon>account_balance</mat-icon>
+                <span>Update Client &nbsp;</span>
+            </button>
+        </div>
+    </div>
+    <div class="row info">
+        <div class="col" *ngFor="let info of clientInfoData">
+            <app-entity-info-card [data]="info"></app-entity-info-card>
+        </div>
+    </div>
+
+    <div class="aboutSection">
+        <div class="pageTitle">
+            <h2>About Client</h2>
+        </div>
+        <div class="aboutContent mat-subheading-1" *ngIf="clientData">
+            <div class="orgLogo">
+                <img [src]="clientData.logo" [alt]="clientData.client + 'Logo'">
+            </div>
+            <span [innerHTML]="clientData.description"></span>
+        </div>
+    </div>
+</section>

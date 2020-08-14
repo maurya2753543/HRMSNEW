@@ -1,0 +1,18 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Clients</h1>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent" (click)="createClient()">
+            <mat-icon>recent_actors</mat-icon>
+            <span>Create Client</span>
+        </button>
+    </div>
+</div>
+<div class="pageContent">
+    <div class="row">
+        <div class="col" *ngFor="let client of clientData">
+            <app-client-detail-card [data]="client"></app-client-detail-card> 
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<mat-sidenav-container [class.collapsed]="!mainMenuExpanded">
+    <mat-sidenav class="mainMenu" position="start" [mode]="'side'" #sidenav [(opened)]="isMainMenuOpen">
+        <app-main-menu [expanded]="mainMenuExpanded"></app-main-menu>
+    </mat-sidenav>
+    <mat-sidenav-content class="sidenav-content">
+        <div class="main-container">
+            <app-header *ngIf="viewState"></app-header>
+            <div class="content-container">
+                <section class="main-section">
+                  <router-outlet></router-outlet> 
+                </section>
+              </div>
+        </div>
+    </mat-sidenav-content>
+    <mat-sidenav class="sidePanel" disableClose="true" position="end" [mode]="'over'" #sidenav [(opened)]="isSidePanelOpen" [ngStyle]="{ 'width': panelWidth }">
+        <ng-template appElementRenderer></ng-template>
+    </mat-sidenav>
+</mat-sidenav-container>
+
+<div [hidden]="!loading">
+    <app-loading></app-loading>
+</div>

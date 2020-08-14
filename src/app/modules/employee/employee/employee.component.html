@@ -1,0 +1,53 @@
+<div class="headingSection">
+    <div class="pageTitle">
+        <h1>Employees</h1>
+    </div>
+    <div class="dateFilter">
+        <mat-form-field appearance="outline" class="reportingManager">
+            <mat-label>Reporting Manager</mat-label>
+            <mat-select [(ngModel)]="reportingManager">
+                <mat-option *ngFor="let manager of ['All', 'Neha Gupta', 'Sweety Nair', 'Vivek Gaur']" [value]="manager">
+                    {{manager}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="projectFilter">
+            <mat-label>Project</mat-label>
+            <mat-select [(ngModel)]="projectFilter">
+                <mat-option *ngFor="let project of ['All', 'MHK Admin App', 'Pool (Pure Software)', 'MHK Market Prominence', 'HR Management System', 'Mashreq KMS', 'Mandiri E-money']" [value]="project">
+                    {{project}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="statusFilter">
+            <mat-label>Status</mat-label>
+            <mat-select [(ngModel)]="statusFilter">
+                <mat-option *ngFor="let status of ['All', 'Active', 'Inactive']" [value]="status">
+                    {{status}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="searchField">
+            <mat-label>Search</mat-label>
+            <input matInput placeholder="Enter keyword...">
+            <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+    </div>
+    <div class="insertButton">
+        <button mat-flat-button color="accent" (click)="createEmp()">
+            <mat-icon>people_alt</mat-icon>
+            <span>Create Employee</span>
+        </button>
+    </div>
+</div>
+<div class="pageContent">
+    <div class="row">
+        <div class="col" *ngFor="let emp of empData">
+            <app-emp-detail-card [data]="emp"></app-emp-detail-card> 
+        </div>
+    </div>
+</div>
+<div class="pagination">
+    <span *ngFor="let page of dummyPagination | paginate: { itemsPerPage:5, currentPage: page }"></span>
+    <pagination-controls (pageChange)="page = $event"></pagination-controls>
+</div>

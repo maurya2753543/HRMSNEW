@@ -1,0 +1,57 @@
+<mat-card class="clickable"  routerLink="workspace" matRipple>
+    <div class="orgHeading">
+        <div class="orgLogo mat-headline">
+            <div class="logoCircle">
+                <img [src]="data.clientLogo" [alt]="data.name + 'Logo'">
+            </div>
+            <span>{{data.name}}</span>
+        </div>
+        <button mat-icon-button color="warn" [matMenuTriggerFor]="orgMenu" stopClickPropgation> 
+            <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #orgMenu="matMenu" xPosition="before">
+            <button mat-menu-item>
+                <mat-icon>slideshow</mat-icon>
+                <span>View Details</span>
+            </button>
+            <button mat-menu-item (click)="updateProject()">
+                <mat-icon>rate_review</mat-icon>
+                <span>Updated Project</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>people_alt</mat-icon>
+                <span>Add Employee</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>library_books</mat-icon>
+                <span>Create Tasks</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>timeline</mat-icon>
+                <span>Timeline</span>
+            </button>
+        </mat-menu>
+    </div>
+    <div class="orgDetails">
+        <div class="detail mat-subheading-2 flex50" matTooltip="Client" matTooltipPosition="before">
+            <mat-icon>recent_actors</mat-icon>
+            <span>{{data.client}}</span>
+        </div>
+        <div class="detail flex50" matTooltip="Total Employee Assigned" matTooltipPosition="before">
+            <mat-icon>people_alt</mat-icon>
+            <span>{{data.totalEmployee}}</span>
+        </div>
+        <div class="detail flex50" matTooltip="Project Completion" matTooltipPosition="before">
+            <mat-icon>timelapse</mat-icon>
+            <span>{{data.progress}}</span>
+        </div>
+        <div class="detail flex50" matTooltip="Status" matTooltipPosition="before">
+            <mat-icon>library_add_check</mat-icon>
+            <span>{{data.status}}</span>
+        </div>
+        <div class="detail" matTooltip="Project Duration" matTooltipPosition="before">
+            <mat-icon>av_timer</mat-icon>
+            <span>{{data.duration}}</span>
+        </div>
+    </div>
+</mat-card>

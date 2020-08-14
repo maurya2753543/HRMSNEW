@@ -1,0 +1,96 @@
+<div class="pageHeader">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <button mat-icon-button color="warn" routerLink="/project"> 
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <div class="headingGroup">
+                <div class="headingLogo">
+                    <img src="assets/images/mhk-logo.png" alt="MHK Logo">
+                </div>
+                <div class="headingDetails">
+                    <div class="headingTitle">MHK Admin App</div>
+                    <div class="headingSubtitle">Client: MHK</div>
+                </div>
+            </div>
+            <div class="spacer"></div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+</div>
+<div class="tabGroup">
+    <mat-tab-group dynamicHeight color="primary">
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>dns</mat-icon>
+                Project Details
+            </ng-template>
+            <div class="tabContent projectDetails mat-subheading-1">
+                MHK is a pioneer in healthcare technology. <br><br>
+MHK’s mission is to drive better member care in a changing healthcare environment by bringing every care moment in a person’s health journey together through an integrated platform.<br><br>
+
+Founded in 2010 on the concept that healthcare reimbursements would be tied to quality versus fee-for-service—a precursor to today’s value-based healthcare, MHK continues to push the envelope to ensure increased efficiencies that save time and money, and ultimately, enhance health outcomes. MHK is where care and knowledge converge.<br><br>
+
+Our vision is to build the trusted care management solutions of tomorrow to revolutionize the way healthcare is delivered.<br><br>
+
+This vision has rapidly become the industry standard, with solutions that manage nearly 50 million lives through a customer base of the most prominent players in healthcare, including 3 of the top 5 and 6 of the top 10 health plans in the country.<br><br>
+
+Today, we offer powerful SaaS-based technology that empowers health plans, PBMs, and provider organizations to improve productivity, automate processes, make more confident clinical and operational decisions, increase revenue, and meet the rigorous demands of federal, state, and commercial compliance.<br><br>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>people_alt</mat-icon>
+                Team Members
+            </ng-template>
+            <div class="tabContent">
+                <app-team-member></app-team-member>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>schedule</mat-icon>
+                Your Timesheet
+            </ng-template>
+            <div class="tabContent">
+                <app-timesheet></app-timesheet>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>assignment_turned_in</mat-icon>
+                Team's Timesheet
+            </ng-template>
+            <div class="tabContent">
+                <app-timesheet-approval></app-timesheet-approval>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>library_books</mat-icon>
+                Task
+            </ng-template>
+            <div class="tabContent">
+                <div style="padding: 20px;">Coming Soon...</div>
+            </div>
+        </mat-tab>
+        <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>message</mat-icon>
+                Message
+            </ng-template>
+            <div class="tabContent">
+                <div style="padding: 20px;">Coming Soon...</div>
+            </div>
+        </mat-tab>
+        <!-- <mat-tab>
+            <ng-template mat-tab-label>
+                <mat-icon>timeline</mat-icon>
+                Timeline
+            </ng-template>
+            <div class="tabContent">
+                Timeline
+            </div>
+        </mat-tab> -->
+    </mat-tab-group>
+</div>

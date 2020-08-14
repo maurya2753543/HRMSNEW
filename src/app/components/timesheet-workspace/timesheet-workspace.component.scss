@@ -1,0 +1,164 @@
+@import "../../../custom-theme.scss";
+
+:host {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+// .mat-toolbar.top {
+//     // min-height: 54px;
+// }
+
+// .mat-toolbar.top .mat-toolbar-row {
+//     // height: 54px;
+// }
+
+.mat-toolbar.top .mat-title {
+    margin-bottom: 0;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 400;
+}
+
+.formContainer {
+    flex: 1;
+    overflow: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col {
+    flex: 100%;
+    max-width: 100%;
+}
+
+.formContainer table {
+    width: 100%;
+    background-color: transparent;
+}
+
+td.mat-cell {
+    border-bottom: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    font-size: 13px;
+    color: #000000;
+    padding-right: 16px;
+    vertical-align: top;
+}
+
+.formContainer table::ng-deep tbody tr:nth-child(odd){
+    background: #f5f5f5 !important;
+}
+
+.formContainer table::ng-deep tbody tr:nth-child(even){
+    background: #fdfdfd !important;
+}
+
+.formContainer table::ng-deep tr.mat-header-row{
+    height: 52px;
+}
+
+.formContainer table::ng-deep .mat-sort-header-button, .formContainer table::ng-deep .mat-header-cell {
+    font-size: 13px;
+    font-weight: 500;
+    color: #000000;
+}
+
+th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 16px;
+}
+
+th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 16px;
+}
+
+.mat-paginator {
+    background-color: transparent;
+}
+
+.statusLabel .mat-chip {
+    font-size: 13px;
+    padding-left: 20px;
+    padding-right: 20px;
+    text-align: center !important;
+    display: block !important;
+    color: #ffffff !important;
+    font-weight: 400;
+    line-height: 18px;
+    pointer-events: none;
+}
+
+.statusLabel .mat-chip.committedBuffer, .statusLabel .mat-chip.pending {
+    background: $primaryA100;
+    border: 1px solid $primaryA200;
+    
+}
+
+.statusLabel .mat-chip.rejected, .statusLabel .mat-chip.nonBillable {
+    background: $warnA100;
+    border: 1px solid $warnA200;
+    
+}
+
+.statusLabel .mat-chip.approved, .statusLabel .mat-chip.billable {
+    background: $accentA200;
+    border: 1px solid $accent;
+    text-shadow: 0px 0px 15px rgba(0, 200, 83, 0.8);
+}
+
+.bottom button {
+    margin-left: 16px;
+}
+
+.dateFilter {
+    font-size: 13px;
+}
+
+.dateFilter .mat-form-field {
+    margin-right: 16px;
+}
+
+.dateFilter .mat-form-field::ng-deep .mat-form-field-wrapper {
+    padding: 0;
+}
+
+.dateFilter .mat-form-field-appearance-outline::ng-deep .mat-form-field-outline {
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.dateFilter .mat-form-field.mat-form-field-appearance-outline::ng-deep .mat-form-field-infix {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.dateFilter .mat-form-field::ng-deep .mat-select-value {
+    position: relative;
+    top: -2px;
+}
+
+.statusFilter {
+    width: 120px;
+}
+
+.dateField {
+    width: 140px;
+}
+
+.dateFilter .mat-form-field-appearance-outline::ng-deep .mat-form-field-label {
+    margin-top: -7px;
+}
+
+.dateFilter::ng-deep .mat-form-field-appearance-outline.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label {
+    margin-top: -5px;
+}
+
+.dateFilter::ng-deep input.mat-input-element {
+    position: relative;
+    top: -5px;
+}
